@@ -110,6 +110,11 @@ for subj in range(num_subjects):
 all_scores = [score for student in scores for score in student]
 print("All scores flattened:", all_scores)
 
+# ✅ Task 6: Find the highest score among all students
+highest = max(all_scores)
+print("Highest score among all students:", highest)
+
+
 
 
 
