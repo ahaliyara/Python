@@ -101,5 +101,11 @@ print("Average score per subject:")
 num_subjects = len(scores[0])
 num_students = len(scores)
 
+for subj in range(num_subjects):
+    total = sum(scores[student][subj] for student in range(num_students))
+    avg = total / num_students
+    print(f"Subject {subj+1} average: {round(avg, 2)}")
+
+
 
 
