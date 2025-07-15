@@ -73,3 +73,6 @@ for i, student_scores in enumerate(scores):
     for j, score in enumerate(student_scores):
         print(f"Student {i+1}, Subject {j+1}: {score}")
 
+# ▶️ 4. Adding a New Student's Scores
+scores.append([88, 79, 85])
+print("After adding Student 4:", scores)
