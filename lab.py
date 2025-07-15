@@ -61,3 +61,9 @@ print("Score of Student 1 in Subject 2:", scores[0][1])  # 92
 
 # ✅ Task 1: Print score of Student 3 in Subject 3
 print("Student 3, Subject 3:", scores[2][2])
+
+# ▶️ 3. Iterating through a List of Lists
+print("All scores row by row:")
+for student_scores in scores:
+    print(student_scores)
+
