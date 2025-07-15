@@ -90,3 +90,10 @@ print("After updating Student 2's Subject 1 score:", scores)
 scores[4][1] = 82
 print("After updating Student 5's Subject 2 score:", scores)
 
+# ▶️ 6. Calculating Averages
+print("Average score per student:")
+for i, student_scores in enumerate(scores):
+    avg = sum(student_scores) / len(student_scores)
+    print(f"Student {i+1} average: {round(avg, 2)}")
+
+
