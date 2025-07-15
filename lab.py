@@ -46,3 +46,4 @@ print("\n" + greeting)
 # ✅ Task 5: Create a sentence introducing yourself using your variables and print it
 my_intro = f"My name is {name}, I am {age} years old, and I live in {city}."
 print(my_intro)
+
