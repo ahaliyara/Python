@@ -106,6 +106,11 @@ for subj in range(num_subjects):
     avg = total / num_students
     print(f"Subject {subj+1} average: {round(avg, 2)}")
 
+# ▶️ 7. Flattening a List of Lists into a Single List
+all_scores = [score for student in scores for score in student]
+print("All scores flattened:", all_scores)
+
+
 
 
 
