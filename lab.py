@@ -96,4 +96,10 @@ for i, student_scores in enumerate(scores):
     avg = sum(student_scores) / len(student_scores)
     print(f"Student {i+1} average: {round(avg, 2)}")
 
+# ✅ Task 5: Print subject-wise average (column-wise average)
+print("Average score per subject:")
+num_subjects = len(scores[0])
+num_students = len(scores)
+
+
 
