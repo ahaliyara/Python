@@ -67,3 +67,9 @@ print("All scores row by row:")
 for student_scores in scores:
     print(student_scores)
 
+# ✅ Task 2: Print each individual score in a tabular format
+print("Individual scores:")
+for i, student_scores in enumerate(scores):
+    for j, score in enumerate(student_scores):
+        print(f"Student {i+1}, Subject {j+1}: {score}")
+
