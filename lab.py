@@ -86,4 +86,7 @@ print("After adding Student 5:", scores)
 scores[1][0] = 95
 print("After updating Student 2's Subject 1 score:", scores)
 
+# ✅ Task 4: Change Student 5's Subject 2 score to 82
+scores[4][1] = 82
+print("After updating Student 5's Subject 2 score:", scores)
 
