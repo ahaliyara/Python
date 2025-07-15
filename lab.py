@@ -76,3 +76,8 @@ for i, student_scores in enumerate(scores):
 # ▶️ 4. Adding a New Student's Scores
 scores.append([88, 79, 85])
 print("After adding Student 4:", scores)
+
+# ✅ Task 3: Add another student with scores [70, 80, 90]
+scores.append([70, 80, 90])
+print("After adding Student 5:", scores)
+
