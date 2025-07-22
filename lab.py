@@ -114,6 +114,95 @@ print("All scores flattened:", all_scores)
 highest = max(all_scores)
 print("Highest score among all students:", highest)
 
+import numpy as np
+# ---------------------------------------------
+# 1. Creating Arrays
+# ---------------------------------------------
+
+# Create a 1D array from a list
+a = np.array([1, 2, 3])
+print("1D Array:", a)
+
+# Create a 2D array (matrix)
+b = np.array([[1, 2], [3, 4]])
+print("2D Array:\n", b)
+
+# ---------------------------------------------
+# 2. Array Properties
+# ---------------------------------------------
+
+print("Shape:", a.shape)
+print("Dimensions:", a.ndim)
+print("Data type:", a.dtype)
+print("Total elements:", a.size)
+
+# 3. Special Arrays
+# ---------------------------------------------
+
+print("Zeros:\n", np.zeros((2, 3)))
+print("Ones:\n", np.ones((3, 3)))
+print("Full with 7s:\n", np.full((2, 2), 7))
+print("Identity Matrix:\n", np.eye(3))
+print("Range with step:\n", np.arange(0, 10, 2))
+print("Evenly spaced:\n", np.linspace(0, 1, 5))
+
+# 4. Reshaping & Flattening
+# ---------------------------------------------
+
+arr = np.arange(1, 7)
+reshaped = arr.reshape((2, 3))
+print("Reshaped 2x3:\n", reshaped)
+print("Flattened:", reshaped.flatten())
+
+# 5. Indexing & Slicing
+# ---------------------------------------------
+
+matrix = np.array([[10, 20, 30], [40, 50, 60]])
+print("Element at row 1, col 2:", matrix[1, 2])
+print("Second column:", matrix[:, 1])
+print("Submatrix (rows 0-1, cols 1-2):\n", matrix[0:2, 1:3])
+
+# 6. Element-wise Operations
+# ---------------------------------------------
+
+x = np.array([1, 2, 3])
+y = np.array([4, 5, 6])
+print("Add:", x + y)
+print("Multiply:", x * y)
+print("Square root:", np.sqrt(x))
+print("Exponential:", np.exp(x))
+print("Log:", np.log(x))
+
+# 7. Matrix Multiplication
+# ---------------------------------------------
+
+m1 = np.array([[1, 2], [3, 4]])
+m2 = np.array([[2, 0], [1, 3]])
+product = np.dot(m1, m2)
+print("Matrix Product:\n", product)
+
+# ---------------------------------------------
+# 8. Aggregate Functions
+# ---------------------------------------------
+
+stats = np.array([[5, 10, 15], [20, 25, 30]])
+print("Sum:", stats.sum())
+print("Mean:", stats.mean())
+print("Std Dev:", stats.std())
+print("Min:", stats.min())
+print("Max:", stats.max())
+print("Column-wise sum:", stats.sum(axis=0))
+print("Row-wise sum:", stats.sum(axis=1))
+
+# 9. Boolean Filtering
+# ---------------------------------------------
+
+data = np.array([10, 20, 30, 40, 50])
+mask = data > 30
+print("Mask:", mask)
+print("Filtered Data:", data[mask])
+
+
 
 
 
