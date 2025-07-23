@@ -26,3 +26,9 @@ print("\nSample orders data:")
 print(orders_df.head())
 print("\nSample stock data:")
 print(stock_df.head())
+
+# ✅ Task 1: How many unique meals and eateries exist?
+print("\n✅ Task 1: Unique counts")
+print("Unique meals:", meals_df["meal_id"].nunique())
+print("Unique eateries:", meals_df["eatery"].nunique())
+
