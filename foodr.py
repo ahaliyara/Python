@@ -71,3 +71,56 @@ print("\n✅ Task 3: Total profit by eatery:")
 
 
 print(profit_by_eatery)
+
+# ▶️ Step 5: Analyze stock levels vs orders
+
+
+stocked = stock_df.groupby("meal_id")["stocked_quantity"].sum()
+
+
+ordered = orders_df.groupby("meal_id")["order_quantity"].sum()
+
+
+stock_vs_orders = pd.DataFrame({
+
+
+   "stocked": stocked,
+
+
+   "ordered": ordered
+
+
+}).fillna(0)
+
+
+stock_vs_orders["leftover"] = stock_vs_orders["stocked"] - stock_vs_orders["ordered"]
+
+
+print("\n✅ Task 4: Meals with negative leftover stock (oversold):")
+
+
+print(stock_vs_orders[stock_vs_orders["leftover"] < 0])
+
+# ▶️ Step 6: Daily revenue trend using NumPy
+
+
+daily_revenue = orders_df.groupby("order_date")["total_price"].sum().reset_index()
+
+
+daily_revenue["7_day_avg"] = daily_revenue["total_price"].rolling(window=7).mean()
+
+
+print("\n✅ Task 5: Revenue trend (last 10 days):")
+
+
+print(daily_revenue.tail(10))
+
+
+# ===============================================
+
+
+# ✅ You’ve completed the Foodr Data Analysis Exercise!
+
+
+# ===============================================
+
