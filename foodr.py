@@ -40,3 +40,34 @@ revenue_per_meal = orders_df.groupby("meal_id")["order_revenue"].sum().reset_ind
 revenue_per_meal = revenue_per_meal.merge(meals_df[["meal_id", "eatery"]], on="meal_id", how="left")
 print("\n✅ Task 2: Top 5 revenue-generating meals:")
 print(revenue_per_meal.sort_values(by="order_revenue", ascending=False).head())
+
+# ▶️ Step 4: Profit per meal
+
+
+meals_df["profit_margin"] = meals_df["meal_price"] - meals_df["meal_cost"]
+
+
+orders_df["meal_cost"] = orders_df["meal_id"].map(meals_df.set_index("meal_id")["meal_cost"])
+
+
+orders_df["meal_price"] = orders_df["meal_id"].map(meals_df.set_index("meal_id")["meal_price"])
+
+
+orders_df["total_cost"] = orders_df["order_quantity"] * orders_df["meal_cost"]
+
+
+orders_df["total_price"] = orders_df["order_quantity"] * orders_df["meal_price"]
+
+
+orders_df["profit"] = orders_df["total_price"] - orders_df["total_cost"]
+
+
+profit_by_eatery = orders_df.merge(meals_df[["meal_id", "eatery"]], on="meal_id", how="left") \
+\
+   .groupby("eatery")["profit"].sum().sort_values(ascending=False).reset_index()
+
+
+print("\n✅ Task 3: Total profit by eatery:")
+
+
+print(profit_by_eatery)
