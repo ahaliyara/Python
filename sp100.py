@@ -11,3 +11,9 @@ data = np.genfromtxt('sp100.csv', delimiter=',', names=True, dtype=None, encodin
 print("1. Company Names and Sectors")
 for company in data:
     print(f"{company['Name']} ({company['Sector']})")
+
+# 2. Compute and print the average price and EPS
+print("\n2. Average Price and EPS")
+avg_price = np.mean(data['Price'])
+avg_eps = np.mean(data['EPS'])
+print(f"Average Price: {avg_price:.2f}, Average EPS: {avg_eps:.2f}")
